@@ -12,7 +12,7 @@ public class SnakePanel extends JPanel implements ActionListener {
 
     static final int UNIT_SIZE = 20;
     static final int TOTAL_UNITS = (GRID_HEIGHT / UNIT_SIZE) * (GRID_WIDTH / UNIT_SIZE);
-    static final int TICK = 400;
+    static final int TICK = 350;
     static int[] dx = {0, 0, -1, 1};
     static int[] dy = {-1, 1, 0, 0};
     Timer timer;
@@ -105,7 +105,7 @@ public class SnakePanel extends JPanel implements ActionListener {
 //            System.out.println(Arrays.toString(x));
 //        }
 //        System.out.println("---------------");
-
+        System.out.println(curTick);
         move();
         growIfEaten();
         if (checkCollision()) {
@@ -149,8 +149,8 @@ public class SnakePanel extends JPanel implements ActionListener {
         length++;
         applesEaten++;
         justEaten = true;
-        if (curTick > 25) {
-            curTick -= 25;
+        if (curTick > 50) {
+            curTick -= 12.5;
             timer.stop();
             timer = new Timer(curTick, this);
             timer.start();
