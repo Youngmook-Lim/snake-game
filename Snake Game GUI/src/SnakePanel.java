@@ -215,7 +215,8 @@ public class SnakePanel extends JPanel implements ActionListener {
                     g.setColor(Color.green);
                 } else {
 //                    g.setColor(new Color(0, 255, 0, 128));
-                    g.setColor(Color.YELLOW);
+//                    g.setColor(Color.YELLOW);
+                    g.setColor(new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
                 }
                 g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
             }
